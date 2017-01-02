@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <div id="test"></div>
+    <script type="text/babel">
+      //jsx基本语法：遇到html标签（<开头），就用html解析，遇到代码块（{开头），则以js规则解析
+      var names = ['Alice', 'Emily', 'Kate'];
+      var ages=['23','21','11'];
+      ReactDOM.render(
+        <div>
+        {
+          names.map(function (name) {
+            return <div>Hello, {name}!</div>
+          })
+        }
+        </div>,
+        document.getElementById('example')
+      );
+
+      ReactDOM.render(
+              <em>{
+                ages.map(function (age) {
+                  return <b>我的年龄是{age}。</b>
+                })
+              }
+              </em>,
+                    document.getElementById('test')
+      );
+    </script>
+  </body>
+</html>

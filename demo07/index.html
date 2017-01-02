@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      //组件不是真正的dom，是虚拟dom。只有插入文档后才是真正的dom。
+      //所有dom的变动，先在虚拟dom上发生，然后在将实际变动的部分反映在真实的dom上面。 此算法叫做 dom diff。
+      //sometime，需从组件获取真实dom节点。要用到ref属性。
+      //input输入框 需要真实的dom 。
+      // this.refs.[refName]获取的是真实的dom，必须等到虚拟dom插入文档后，才可使用此属性。此处用回调函数解决
+var MyComponent = React.createClass({
+  handleClick: function() {
+    this.refs.myTextInput.focus();
+  },
+  render: function() {
+    return (
+      <div>
+        <input type="text" ref="myTextInput" />
+        <input type="button" value="Focus the text input" onClick={this.handleClick} />
+      </div>
+    );
+  }
+});
+
+ReactDOM.render(
+  <MyComponent />,
+  document.getElementById('example')
+);
+    </script>
+  </body>
+</html>

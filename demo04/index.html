@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<div id="test"></div>
+<script type="text/babel">
+    //下面的变量HelloMessage是一个组件类，模板插入  <HelloMessage/>时，会自动生成HelloMessage
+    //的一个实例，所有组件类都必须有自己的render方法。用于输出组件
+    //React.createClass方法用于生成一个组件类，组件类的第一个字母必须大写，组件类只能包含一个顶层标签
+    //组件的属性可在组件类的this.props对象上获取。
+    //添加组件属性的时候要注意，class属性要写错className，for要写错htmlFor，因为这两个是js保留字
+    var HelloMessage = React.createClass({
+        render: function () {
+            return <h1>Hello {this.props.name}</h1>;
+        }
+    });
+
+    ReactDOM.render(
+            <HelloMessage name="John"/>,
+            document.getElementById('example')
+    );
+
+    var Myage = React.createClass({
+        render: function () {
+            return <b>我的年龄是：{this.props.age}</b>;
+        }
+    });
+
+    ReactDOM.render(
+        <Myage age="22"/>,
+                document.getElementById('test')
+    );
+</script>
+</body>
+</html>
