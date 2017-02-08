@@ -14,14 +14,15 @@
       var data = 'wer';
 
       var MyTitle = React.createClass({
-        getDefaultProps:function () {
+          getDefaultProps:function () {
           return {
             title:'haha'
           };
         },
-       /* propTypes: {
+
+          propTypes: {
           title: React.PropTypes.string.isRequired,
-        },*/
+        },
 
         render: function() {
           return <h1> {this.props.title} </h1>;

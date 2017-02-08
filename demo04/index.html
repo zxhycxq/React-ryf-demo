@@ -16,12 +16,12 @@
     //添加组件属性的时候要注意，class属性要写错className，for要写错htmlFor，因为这两个是js保留字
     var HelloMessage = React.createClass({
         render: function () {
-            return <h1>Hello {this.props.name}</h1>;
+            return <h1>Hello {this.props.name},性别为{this.props.sex}的你，听说你 {this.props.age}了</h1>;
         }
     });
 
     ReactDOM.render(
-            <HelloMessage name="John"/>,
+            <HelloMessage name="John" age="23" sex="男"/>,
             document.getElementById('example')
     );
 
