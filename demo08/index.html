@@ -10,16 +10,20 @@
     <script type="text/babel">
 var LikeButton = React.createClass({
   //this.props 表示那些一旦定义，就不再改变的特性，而 this.state 是会随着用户互动而产生变化的特性。
-  getInitialState: function() {
-    return {liked: false};
-  },
+    getInitialState: function () {
+        return {
+            linked:false
+        };
+    },
+
   handleClick: function(event) {
-    this.setState({liked: !this.state.liked});
+      this.setState({liked: !this.state.liked});
   },
   render: function() {
     var text = this.state.liked ? 'like' : 'haven\'t liked';
     return (
       <p onClick={this.handleClick}>
+
         You {text} this. Click to toggle.
       </p>
     );

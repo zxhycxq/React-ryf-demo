@@ -14,24 +14,19 @@
 <body>
 <div id="example"></div>
 <script type="text/babel">
-    class Greeting extends React.Component {
-        render() {
-            return (
-                    <h1>Hello, {this.props.name?this.props.name:12}</h1>
-            );
-        }
-    }
-
-    // Specifies the default values for props:
-    Greeting.defaultProps = {
-        name: 'Stranger'
-    };
-
-    // Renders "Hello, Stranger":
-    ReactDOM.render(
-            <Greeting />,
-            document.getElementById('example')
-    );
+  var Component1=React.createClass(){
+      getInitialState:function() {
+        return {
+            liked:true;
+        },
+          handleClick:function(event) {
+            this.setState({liked:!this.state.liked});
+          },
+          render:function () {
+                          
+          }
+      }
+  }
 </script>
 </body>
 </html>

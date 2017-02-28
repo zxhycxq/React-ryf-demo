@@ -8,6 +8,7 @@
 <body>
 <div id="example"></div>
 <div id="test"></div>
+<div id="es6"></div>
 <script type="text/babel">
     //下面的变量HelloMessage是一个组件类，模板插入  <HelloMessage/>时，会自动生成HelloMessage
     //的一个实例，所有组件类都必须有自己的render方法。用于输出组件
@@ -35,6 +36,22 @@
         <Myage age="22"/>,
                 document.getElementById('test')
     );
+    /* import React ,{Component} from '../build/react-0.13.4.min';
+    class es6 extends React.Component (){
+        constructor(props){
+            super(props);
+        }
+        render() {
+            return (
+                <b>哈哈{this.props.names}</b>
+            );
+        }
+    }
+
+    ReactDOM.render(
+        <es6 names="we"/>,
+            document.getElementById('es6')
+    );*/
 </script>
 </body>
 </html>
